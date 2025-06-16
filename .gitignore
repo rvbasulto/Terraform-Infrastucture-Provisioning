@@ -1,0 +1,19 @@
+# Terraform files to ignore
+.terraform/
+.terraform.lock.hcl
+
+# Sensitive variable files
+terraform.tfvars
+*.tfstate
+*.tfstate.backup
+
+# Crash logs
+crash.log
+
+# IDEs and system files
+*.log
+*.swp
+*.bak
+.DS_Store
+.vscode/
+.idea/
