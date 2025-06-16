@@ -6,6 +6,8 @@
 terraform.tfvars
 *.tfstate
 *.tfstate.backup
+dovekey
+dovekey.pub
 
 # Crash logs
 crash.log
