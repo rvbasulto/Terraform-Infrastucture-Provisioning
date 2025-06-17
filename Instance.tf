@@ -27,9 +27,23 @@ resource "aws_instance" "web" {
       "sudo /tmp/web.sh"
     ]
   }
+
+  provisioner "local-exec" {
+    command = "echo ${self.public_ip} >> private_ips.txt"
+  }
 }
 
 resource "aws_ec2_instance_state" "web-state" {
   instance_id = aws_instance.web.id
   state       = "running"
+}
+
+output "WebPublicIP" {
+  description = "AMI ID of Ubuntu instance"
+  value       = aws_instance.web.public_ip
+}
+
+output "WebPrivateIP" {
+  description = "AMI ID of Ubuntu instance"
+  value       = aws_instance.web.private_ip
 }
